@@ -1,0 +1,20 @@
+<section class="container-fluid mt-4">
+  <div class="row">
+    <div class="col-md-12 px-0">
+      <ngx-slick-carousel class="carousel"
+                          #slickModal="slick-carousel"
+                          [config]="slideConfig"
+                          (init)="slickInit($event)"
+                          (breakpoint)="breakpoint($event)"
+                          (afterChange)="afterChange($event)"
+                          (beforeChange)="beforeChange($event)">
+        <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+          <img src="{{ slide.img }}" alt="" width="100%">
+        </div>
+
+<!--        <button type="button" class="btn btn-primary slick-next">Next</button>-->
+      </ngx-slick-carousel>
+    </div>
+  </div>
+</section>
+
