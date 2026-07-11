@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+
 @Component({
   selector: 'app-partners',
+  standalone: true as boolean,
+  imports: [CommonModule, SlickCarouselModule],
   templateUrl: './partners.component.html',
   styleUrls: ['./partners.component.css'],
 })
