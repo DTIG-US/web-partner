@@ -8,8 +8,8 @@
                           (breakpoint)="breakpoint($event)"
                           (afterChange)="afterChange($event)"
                           (beforeChange)="beforeChange($event)">
-        <div ngxSlickItem *ngFor="let slide of slides" class="slide">
-          <img src="{{ slide.img }}" alt="" width="100%">
+        <div ngxSlickItem *ngFor="let partner of partnersData.partners" class="slide">
+          <a href="{{ partner.url }}" target="_blank">{{ partner.name }}</a>
         </div>
 
 <!--        <button type="button" class="btn btn-primary slick-next">Next</button>-->
