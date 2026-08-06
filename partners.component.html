@@ -1,20 +1,9 @@
 <section class="container-fluid mt-4">
-  <div class="row">
-    <div class="col-md-12 px-0">
-      <ngx-slick-carousel class="carousel"
-                          #slickModal="slick-carousel"
-                          [config]="slideConfig"
-                          (init)="slickInit($event)"
-                          (breakpoint)="breakpoint($event)"
-                          (afterChange)="afterChange($event)"
-                          (beforeChange)="beforeChange($event)">
-        <div ngxSlickItem *ngFor="let partner of partnersData.partners" class="slide">
-          <a href="{{ partner.url }}" target="_blank">{{ partner.name }}</a>
-        </div>
-
-<!--        <button type="button" class="btn btn-primary slick-next">Next</button>-->
-      </ngx-slick-carousel>
+  <div class="d-flex flex-wrap justify-content-center gap-3">
+    <div
+      class="slide"
+      *ngFor="let item of partnersData.partners"
+      [style.background-image]="item.image">
     </div>
   </div>
 </section>
-
