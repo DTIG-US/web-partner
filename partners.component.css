@@ -1,48 +1,87 @@
 .partners-section {
-  padding: 1.5rem 0;
+  padding: 2.5rem 0;
+  position: relative;
 }
 
 .partners-grid {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-wrap: nowrap;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
+  max-width: 1300px;
+  margin: 0 auto;
+  overflow-x: auto;
+  padding: 1rem 0.5rem;
+  /* Hide scrollbar for clean visual appearance */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.partners-grid::-webkit-scrollbar {
+  display: none;
 }
 
 .partner-card {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 200px;
-  height: 100px;
-  padding: 1rem;
-  border-radius: 12px;
-  background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  height: 110px;
+  padding: 1.25rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px) saturate(1.2);
+  -webkit-backdrop-filter: blur(12px) saturate(1.2);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.3s ease,
+              background-color 0.3s ease;
   text-decoration: none;
+}
+
+@media (min-width: 1200px) {
+  .partners-grid {
+    justify-content: center;
+  }
+  .partner-card {
+    flex: 1 1 0px;
+    max-width: 220px;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .partners-grid {
+    justify-content: flex-start;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  .partner-card {
+    flex: 0 0 180px;
+  }
 }
 
 .partner-card:hover,
 .partner-card:focus-visible {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-  border-color: rgba(0, 0, 0, 0.15);
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 16px 40px 0 rgba(0, 0, 0, 0.12);
+  border-color: rgba(255, 255, 255, 0.6);
   outline: none;
 }
 
 .partner-logo {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 85%;
+  max-height: 85%;
   object-fit: contain;
-  filter: opacity(0.85);
-  transition: filter 0.25s ease, transform 0.25s ease;
+  mix-blend-mode: multiply;
+  filter: grayscale(100%) opacity(0.6);
+  transition: filter 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .partner-card:hover .partner-logo,
 .partner-card:focus-visible .partner-logo {
-  filter: opacity(1);
-  transform: scale(1.05);
+  filter: grayscale(0%) opacity(1);
+  transform: scale(1.06);
 }

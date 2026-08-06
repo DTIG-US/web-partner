@@ -1,21 +1,25 @@
 <section class="partners-section py-4">
-  <div class="container">
-    <div class="partners-grid">
-      @for (item of partnersData.partners; track item.name) {
-        <a
-          [href]="item.url"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="partner-card"
-          [attr.aria-label]="item.name"
-        >
-          <img
-            [src]="item.image"
-            [alt]="item.name + ' logo'"
-            class="partner-logo"
-          />
-        </a>
-      }
+  <div class="container-fluid px-5">
+    <div class="row">
+      <div class="col-12">
+        <div class="partners-grid">
+          @for (item of partnersData.partners; track item.name) {
+            <a
+              [href]="item.url"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="partner-card"
+              [attr.aria-label]="item.name"
+            >
+              <img
+                [src]="item.image"
+                [alt]="item.name + ' logo'"
+                class="partner-logo"
+              />
+            </a>
+          }
+        </div>
+      </div>
     </div>
   </div>
 </section>
