@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { PartnersComponent } from './partners.component';
 
 describe('PartnersComponent', () => {
@@ -8,7 +7,7 @@ describe('PartnersComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PartnersComponent ]
+      imports: [ PartnersComponent ]
     })
     .compileComponents();
 
@@ -21,3 +20,4 @@ describe('PartnersComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+
