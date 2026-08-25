@@ -1,10 +1,33 @@
+:host {
+  /* Partners Component Tokens & Defaults */
+  --ih-partner-bg: rgba(8, 22, 58, 0.82);
+  --ih-partner-border: var(--ih-color-border, rgba(125, 249, 255, 0.18));
+  --ih-partner-padding: 1.25rem 0;
+
+  /* Card Tokens */
+  --ih-partner-card-bg: rgba(255, 255, 255, 0.85);
+  --ih-partner-card-bg-hover: rgba(255, 255, 255, 0.95);
+  --ih-partner-card-border: rgba(255, 255, 255, 0.35);
+  --ih-partner-card-border-hover: rgba(255, 255, 255, 0.6);
+  --ih-partner-card-radius: var(--ih-radius-lg, 16px);
+  --ih-partner-card-height: 88px;
+  --ih-partner-card-blur: var(--ih-blur-glass, 14px);
+  --ih-partner-card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+  --ih-partner-card-shadow-hover: 0 16px 40px 0 rgba(0, 0, 0, 0.12);
+  --ih-partner-card-hover-translate-y: -6px;
+
+  /* Logo Tokens */
+  --ih-partner-logo-filter: grayscale(100%) opacity(0.6);
+  --ih-partner-logo-filter-hover: grayscale(0%) opacity(1);
+}
+
 /* ─── Partners Section ───────────────────────────────── */
 .partners-section {
-  padding: 1.25rem 0;
+  padding: var(--ih-partner-padding);
   position: relative;
-  background: rgba(8, 22, 58, 0.82);
-  border-top: 1px solid rgba(125, 249, 255, 0.18);
-  border-bottom: 1px solid rgba(125, 249, 255, 0.18);
+  background: var(--ih-partner-bg);
+  border-top: 1px solid var(--ih-partner-border);
+  border-bottom: 1px solid var(--ih-partner-border);
 }
 
 /* ─── Partners Grid ──────────────────────────────────── */
@@ -31,14 +54,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 88px;
+  height: var(--ih-partner-card-height);
   padding: 1rem;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(14px) saturate(1.4);
-  -webkit-backdrop-filter: blur(14px) saturate(1.4);
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+  border-radius: var(--ih-partner-card-radius);
+  background: var(--ih-partner-card-bg);
+  backdrop-filter: blur(var(--ih-partner-card-blur)) saturate(1.4);
+  -webkit-backdrop-filter: blur(var(--ih-partner-card-blur)) saturate(1.4);
+  border: 1px solid var(--ih-partner-card-border);
+  box-shadow: var(--ih-partner-card-shadow);
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
               box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
               border-color 0.3s ease,
@@ -69,10 +92,10 @@
 
 .partner-card:hover,
 .partner-card:focus-visible {
-  transform: translateY(-6px);
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 16px 40px 0 rgba(0, 0, 0, 0.12);
-  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(var(--ih-partner-card-hover-translate-y));
+  background: var(--ih-partner-card-bg-hover);
+  box-shadow: var(--ih-partner-card-shadow-hover);
+  border-color: var(--ih-partner-card-border-hover);
   outline: none;
 }
 
@@ -82,13 +105,13 @@
   max-height: 85%;
   object-fit: contain;
   mix-blend-mode: multiply;
-  filter: grayscale(100%) opacity(0.6);
+  filter: var(--ih-partner-logo-filter);
   transition: filter 0.3s cubic-bezier(0.16, 1, 0.3, 1),
               transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .partner-card:hover .partner-logo,
 .partner-card:focus-visible .partner-logo {
-  filter: grayscale(0%) opacity(1);
+  filter: var(--ih-partner-logo-filter-hover);
   transform: scale(1.06);
 }
