@@ -5,7 +5,6 @@ import * as siteData from '../../data.json';
 
 @Component({
   selector: 'app-partners',
-  standalone: true as boolean,
   imports: [CommonModule, SlickCarouselModule],
   templateUrl: './partners.component.html',
   styleUrls: ['./partners.component.css'],
