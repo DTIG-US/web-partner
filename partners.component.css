@@ -28,6 +28,15 @@
   background: var(--ih-partner-bg);
   border-top: 1px solid var(--ih-partner-border);
   border-bottom: 1px solid var(--ih-partner-border);
+  color: var(--ih-partner-text, inherit);
+}
+
+.partners-section a {
+  color: var(--ih-partner-link, inherit);
+}
+
+.partners-section a:hover {
+  color: var(--ih-partner-link-hover, inherit);
 }
 
 /* ─── Partners Grid ──────────────────────────────────── */
