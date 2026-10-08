@@ -8,14 +8,17 @@
               [href]="item.url"
               target="_blank"
               rel="noopener noreferrer"
-              class="partner-card"
+              class="partner-link"
               [attr.aria-label]="item.name"
             >
-              <img
-                [src]="item.image"
-                [alt]="item.name + ' logo'"
-                class="partner-logo"
-              />
+              <div class="partner-card">
+                <img
+                  [src]="item.image"
+                  [alt]="item.name + ' logo'"
+                  class="partner-logo"
+                />
+              </div>
+              <span class="partner-name">{{ item.name }}</span>
             </a>
           }
         </div>
